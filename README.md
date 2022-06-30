@@ -4,7 +4,7 @@
 
 ## Changelog:
 - 1.1 Fixed conflicts with other Extensions
-- 1.2 aunched the function of [general proxies] in Extension
+- 1.2 Launched the function of [general proxies] in Extension
 
 
 ## Uses proxy in convenient method​
