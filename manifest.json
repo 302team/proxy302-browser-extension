@@ -1,0 +1,42 @@
+{
+    "name": "__MSG_extName__",
+    "description": "__MSG_extDescription__",
+    "version": "1.2",
+    "manifest_version": 2,
+    "default_locale": "en",
+    "homepage_url": "https://www.proxy302.com",
+    "browser_action": {
+        "default_popup": "popup.html",
+        "defalut_icon": "images/logo.png"
+    },
+    "options_page": "options.html",
+    "background": {
+        "scripts": ["js/utils.js", "js/jquery-3.5.1.min.js", "js/background.js"],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.proxy302.com/*", 
+                "http://*.proxy302.com/*"
+            ],
+            "js": ["js/content.js"]
+        }
+    ],
+    "icons": {
+        "16": "images/logo.png",
+        "32": "images/logo.png",
+        "48": "images/logo.png",
+        "128": "images/logo.png"
+    },
+    "permissions": [
+        "tabs",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>",
+        "browsingData",
+        "proxy",
+        "storage",
+        "unlimitedStorage"
+    ]
+}

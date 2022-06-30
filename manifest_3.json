@@ -1,0 +1,39 @@
+{
+    "name": "__MSG_extName__",
+    "description": "__MSG_extDescription__",
+    "version": "1.0",
+    "manifest_version": 3,
+    "homepage_url": "https://www.proxy302.com",
+    "action": {
+        "default_popup": "popup.html",
+        "defalut_icon": "images/logo.png"
+    },
+    "options_page": "options.html",
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.proxy302.com/*", 
+                "http://*.proxy302.com/*"
+            ],
+            "js": ["js/content.js"]
+        }
+    ],
+    "icons": {
+        "16": "images/logo.png",
+        "48": "images/logo.png"
+    },
+    "permissions": [
+        "tabs",
+        "webRequest",
+        "webRequestBlocking",
+        "proxy",
+        "browsingData",
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ]
+}

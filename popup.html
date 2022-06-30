@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+  <script src="js/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+  <script src="js/utils.js" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="js/all.min.js" crossorigin="anonymous"></script>
+  <script src="js/select2.min.js" crossorigin="anonymous"></script>
+  <link href="css/popup.css" type="text/css" rel="stylesheet">
+  <link href="css/select2.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<div class="head d-flex justify-content-between">
+  <div>
+    <img src="/images/proxy302_logo_b_horizontal.svg">
+  </div>
+  <div class="row">
+    <div class="user-data" id="userData">
+      <i class="fa-solid fa-user"></i>
+      <span id="userUsername"></span>
+    </div>
+    <!-- <div class="ml-1">
+      <button id="logoutBtn" class="btn btn-sm btn-link p-0 m-0"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+    </div> -->
+  </div>
+</div>
+
+<div class="page" id="initPage" hidden>
+  <div style="text-align: center; margin: 30px;">
+    <span>Loading...</span>
+  </div>
+</div>
+
+<div class="page" id="controlByOtherExtensionPage" hidden>
+  <div>
+      <div class="text-center icon">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </div>
+      <div class="text">        
+        <div class="first-text">
+          __MSG_proxyNoControl1__
+        </div>
+        <div class="second-text">
+          __MSG_proxyNoControl2__
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="page" id="unloginPage">
+  <button id="to-login" class="btn btn-sm">__MSG_toSignIn__</button>
+  <div class="row mt-3">
+    <div class="col-12 signup">
+      <span>__MSG_noAccount__</span>
+      <span><button type="button" id="to-register" class="btn btn-sm btn-link p-0">__MSG_toSignUp__</a></span>
+    </div>
+  </div>
+</div>
+
+
+<div class="page" id="mainPage" hidden>
+  <div class="control-bar">
+    <div class="row">
+      <div class="col-4">
+        <button type="button" id="connectBtn" class="btn btn-secondary" >
+          <i class="fa-solid fa-power-off" id="offLogo"></i>
+          <span class="spinner-border" id="loadingLogo" role="status" aria-hidden="true" hidden></span>
+        </button>
+      </div>
+      <div class="col-8 mt-2">
+        <div class="row">
+          <span id="connectStatusSpan">Proxy Is OFF</span>
+        </div>
+        <div class="row">
+          <label for="nowIPSpan" style="padding-top: 3px;"></label>
+          <span id="nowIPSpan" style="padding-top: 3px;"></span>
+          <button type="button" id='changeIPBtn' class="btn p-0 m-0 ml-2" hidden>
+            <i class="fa-solid fa-rotate"></i>
+          </button>
+          <button type="button" id='to-ipinfo' class="btn p-0 m-0 ml-2" >
+            <i class="fa-solid fa-circle-exclamation"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="nav nav-pills justify-content-center" id="useProxySelectTab" role="tablist">
+    <li class="nav-item w-50 text-center" role="presentation">
+      <a id="proxy302ProxyNav" class="nav-link active" id="home-tab" data-toggle="tab" href="#proxy302" role="tab" aria-controls="home" aria-selected="true">
+        __MSG_proxy302Proxy__
+      </a>
+    </li>
+    <li class="nav-item w-50 text-center" role="presentation">
+      <a id="customProxyNav" class="nav-link" id="profile-tab" data-toggle="tab" href="#custom" role="tab" aria-controls="profile" aria-selected="false">
+        __MSG_customProxy__
+      </a>
+    </li>
+  </ul> 
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="proxy302" role="tabpanel" aria-labelledby="proxy302-tab">
+      <div>
+        <form>
+          <div class="from-group row">
+            <!-- <label for="proxyTypeSpan" class="col-form-label col-3">__MSG_proxyType__</label> -->
+            <!-- <div class="col-8 col-form-label"> -->
+              <span id="proxyTypeSpan" class="col-form-label align-text-bottom ml-1"></span>
+            <!-- </div> -->
+          </div>
+          <div class="from-group row">
+            <!-- <label for="selectCountry" class="col-form-label col-3">__MSG_country__</label> -->
+            <!-- <div class="col-8"> -->
+              <select id="selectCountry" class="form-control form-control-sm w-100" hidden>
+                <option value="0"><span class='geo-random'>Random Country</span></option>
+              </select>
+              <input id="countrySpan" class="form-control form-control-sm w-100" placeholder="__MSG_country__" readonly>
+            <!-- </div> -->
+          </div>
+          <div class="from-group row">
+            <!-- <label for="selectState" class="col-form-label col-3">__MSG_state__</label> -->
+            <!-- <div class="col-8"> -->
+              <select id="selectState" class="form-control form-control-sm w-100" hidden>
+                <option value="0"><span class='geo-random'>Random State</span></option>
+              </select>
+              <input id="stateSpan" class="form-control form-control-sm w-100" placeholder="__MSG_state__" readonly>
+            <!-- </div> -->
+          </div>
+          <div class="from-group row">
+            <!-- <label for="selectCity" class="col-form-label col-3">__MSG_city__</label> -->
+            <!-- <div class="col-8"> -->
+              <select id="selectCity"  class="form-control form-control-sm w-100" hidden>
+                <option value="0"><span class='geo-random'>Random City</span></option>
+              </select>
+              <input id="citySpan" class="form-control form-control-sm w-100" placeholder="__MSG_city__" readonly>
+            <!-- </div> -->
+          </div>
+          <div class="row">
+            <div class="col-12 m-1">
+                <input type="checkbox" class="" id="useClientCheck">
+                <label class="form-check-label" for="exampleCheck1" style="font-size: 10px;">__MSG_useConnectionTool__</label>
+                <label id="clientIPInputLabel" style="font-size: small;" for="clientIPInput" hidden>, IP:</label>
+                <input id="clientIPInput" type="text" placeholder="defult:127.0.0.1" hidden>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="mask1" hidden>
+        <div>
+          <button id="connectHelpBtn" type="button" class="btn btn-sm">__MSG_help__ →</button>
+        </div>
+      </div>
+    </div>
+        
+    <div class="tab-pane fade" id="custom" role="tabpanel" aria-labelledby="custom-tab">
+      <form id="customProxyForm">
+        <div class="form-group row mb-0 mt-3">
+          <label for="cp-protocol" class="col-form-label col-4">__MSG_protocol__</label>
+          <div class="col-5">
+            <select id="cp-protocol" class="form-control form-control-sm" readonly>
+              <option value="http">HTTP</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <button class="btn btn-sm btn-link p-0" type="reset" id="cp-resetBtn">__MSG_reset__</button>
+          </div>
+        </div>
+        <div class="row mb-0">
+          <div class="col-12">
+            <span style="color: gray; font-size: 10px;">__MSG_pasteFormat__</strong></span>
+          </div>
+        </div>
+        <div class="row form-group">
+          <!-- <label for="cp-host cp-port" class="col-3 col-form-label">Host<strong style="margin: 0 1px ;">:</strong>Port</label> -->
+          <!-- <div class="col-6 pr-0 d-flex"> -->
+          <div class="col-8 pr-0 d-flex">
+            <input id="cp-host" type="text" class="form-control form-control-sm" placeholder="__MSG_host__" style="width: 95%">
+            <span style="width: 5%; padding-left: 2px;">:</span>
+          </div>
+          <!-- <div class="col-3 pl-0"> -->
+          <div class="col-4 pl-0">
+            <input id="cp-port" type="text" class="form-control form-control-sm w-100" placeholder="__MSG_port__">
+          </div>
+        </div>
+        <div class="row form-group">
+          <!-- <label for="cp-username" class="col-form-label col-3">Username</label>
+          <div class="col-9"> -->
+          <div class="col-12">
+            <input id="cp-username" type="text" class="form-control form-control-sm" placeholder="__MSG_username__">
+          </div>
+        </div>
+        <div class="row form-group">
+          <!-- <label for="cp-password" class="col-form-label col-3">Password</label> -->
+          <!-- <div class="col-9"> -->
+          <div class="col-12">
+            <input id="cp-password" type="text" class="form-control form-control-sm" placeholder="__MSG_password__">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="page-foot mt-2">
+  <div class="row btn-row">
+    <div class="col-12 d-flex justify-content-center">
+      <button id="to-help" class="btn btn-sm btn-link">__MSG_help__</button>
+      <span class="dot">·</span>
+      <button id="to-dashboard" class="btn btn-sm btn-link">__MSG_dashborad__</button>
+      <span class="dot">·</span>
+      <button id="to-options" class="btn btn-sm btn-link">__MSG_bypassSetting__</button>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<div class="foot">
+  <span>POWER BY</span><button type="button" id="toHomepage" class="btn btn-sm btn-link p-0">Proxy302</button>
+</div>
+</body>
+<script src="js/popup.js"></script>
+<script src="js/i18n.js"></script>
+</html>

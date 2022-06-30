@@ -1,0 +1,321 @@
+
+body {
+    background-color: #f5f6fa;
+}
+
+.page {
+    width: 324px;
+    height: 318px;
+    padding: 17px 29px;
+}
+
+.page-foot {
+    padding: 0 40px;
+}
+
+.head {
+    background-color: #fff;
+    padding: 19px 26px;
+    height: 60px;
+    box-shadow: 0px 5px 5px -5px #d8d8d8;
+}
+
+.head img {
+    width: 92px;
+    height: 17px;
+}
+
+.user-data {
+    height: 35px;
+    color: #6f8cd5;
+}
+
+#controlByOtherExtensionPage .icon {
+    margin: 8px 0 25px 0;
+}
+
+#controlByOtherExtensionPage .icon svg {
+    color: rgb(226, 0, 0);
+    font-size: 40px;
+}
+
+#controlByOtherExtensionPage .text {
+    background-color: rgb(255, 255, 255);
+    padding: 20px 20px;
+    border-radius: 5px;
+    margin: 0 -20px;
+}
+
+#controlByOtherExtensionPage .first-text {
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+#controlByOtherExtensionPage .second-text {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+#mask1 {
+    background-color: rgba(243, 245, 250, 0.7);
+    width: 280px;
+    height: 170px;
+    position: absolute;
+    top: 205px; 
+    left: 24px;
+    border-radius: 10px;
+}
+
+#mask1>div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#connectHelpBtn{
+    background-color: #6f8cd5;
+    color: white;
+    font-weight: 500;
+    border-radius: 15px;
+    width: 147px;
+    height: 27px;
+    font-size: 10px;
+}
+
+#unloginPage .card{
+    border: 0px;
+    padding: 10px;
+    height: 200px;
+}
+
+#unloginPage .card h1{
+    text-align: center;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+#unloginPage #to-login {
+    background-color: #6f8cd5;
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 13px;
+    width: 100%;
+    margin: 80px 0 0 0;
+}
+
+#unloginPage .signup {
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+#unloginPage #to-register {
+    font-size: 12px;
+}
+
+.control-bar {
+    height: 98px;
+}
+
+#myTabContent{
+    padding: 0 10px;
+}
+
+#connectStatusSpan {
+    color: #777777;
+}
+
+#changeIPBtn {
+    color: #777777;
+}
+
+#to-ipinfo {
+    color: #777777;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
+#connectBtn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity:0.5;
+}
+
+#connectBtn svg {
+    width: 50px;
+    height: 50px;
+}
+
+#useProxySelectTab {
+
+}
+
+#useProxySelectTab a {
+    font-size: 12px;
+    border-radius: 13px;
+    padding: 4px;
+    color: black;
+}
+#useProxySelectTab a.active  {
+    background-color: #6f8cd5;
+    color: white;
+    font-weight: 500;
+}
+
+.tab-content {
+    padding: 0 !important;
+}
+
+#proxy302 .from-group {
+    height: 27px;
+    margin: 5px 0;
+}
+
+#proxy302 .from-group .select2 {
+    width: 100% !important;
+}
+
+#proxy302 .from-group .form-control,
+#proxy302 .from-group .select2-selection {
+    border-radius: 14px;
+    height: 27px;
+    width: 100% !important;
+}
+
+#customProxyForm>.row {
+    /* margin: 3px 0 !important; */
+}
+
+#customProxyForm .row .col-form-label{
+    width: 100%;
+}
+
+#customProxyForm .row input{
+    width: 100%;
+}
+
+input:read-only {
+    background-color: #fefefe !important;
+}
+
+.setup-proxy {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.test-proxy, .reset-from {
+    width: 100%;
+}
+
+#clientIPInput {
+    margin-left: 5px;
+    width: 90px;
+    font-size: small;
+    border:0px;
+    border-radius: 20px;
+    outline: none;
+}
+
+#proxyTypeSpan {
+    font-size: small;
+    margin-bottom: -10px;
+}
+
+#clientIPInput::-webkit-input-placeholder {
+    font-size: 10px;
+}
+
+#cp-resetBtn {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+#customProxyForm .form-group {
+    margin-bottom: 7px;
+}
+
+#customProxyForm .form-group .col-form-label {
+    font-size: 12px;
+}
+
+#customProxyForm .form-group select {
+    border-radius: 12px;
+    font-size: 12px;
+    height: 25px;
+}
+
+#customProxyForm .form-group input {
+    border-radius: 12px;
+    font-size: 12px;
+    height: 25px;
+}
+
+.page-foot .btn-row {
+    border-top: 1px solid #ddd;
+    padding: 10px 0 15px 0;
+}
+
+.btn-row .btn {
+    padding: 0;
+    color: #6f8cd5;
+    font-size: 12px;
+}
+
+.btn-row .dot {
+    color: #6f8cd5;
+    font-size: 15px;
+    font-weight: 900;
+    margin: 0 5px;
+}
+
+.foot {
+    text-align: center;
+    padding-bottom: 40px;
+    color: #777777;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+#toHomepage {
+    color: #6f8cd5;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: -3px;
+}
+
+.geo-random {
+    color: rgb(87, 87, 87) !important;
+}
+
+.geo-code {
+    font-weight: bolder;
+    margin-right: 2px;
+}
+
+.geo-name {
+    color: rgb(87, 87, 87);
+}
+
+.select2-selection .select2-selection__rendered{
+    font-size: 14px;
+}
+
+.select2-dropdown {
+    margin-top: -5px;
+    transform: scale(0.92);
+}
+
+.select2-search {
+    font-size: 14px;
+}
+
+.select2-results .select2-results__options {
+    height: 120px;
+    font-size: 14px;
+}
