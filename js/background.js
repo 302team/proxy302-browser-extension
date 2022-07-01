@@ -123,9 +123,7 @@ function setHttpProxyAuth(username, password) {
     console.log("useing auth: " + username + ":" + password)
 }
 
-/**
- * set system proxy *
- */
+
 function useSystemProxy() {
     var config = {
         mode: "system",
@@ -136,9 +134,7 @@ function useSystemProxy() {
         function() {});
 }
 
-/**
- * set direct proxy *
- */
+
  function directProxy() {
 
     var config = {
@@ -151,9 +147,7 @@ function useSystemProxy() {
 }
 
 
-/**
- * 获取新的代理
- */
+
 function getNowUsingProxy(){
     ws.send(JSON.stringify({
         code: 49200,
@@ -161,9 +155,7 @@ function getNowUsingProxy(){
     }))
 }
 
-/**
- * 使用新代理
- */
+
 function useNowProxy(res) {
     let host = res.data.url;
     let port = 2222
@@ -242,9 +234,6 @@ function setLocalProxy(req, sendResponse){
     })
     setupProxy();
     chrome.runtime.sendMessage({code: 3000}, res => {
-        // if (res.code == 0) {
-            
-        // }
         sendResponse(res)
     })
 }
@@ -255,9 +244,6 @@ function setLocalUser(req, sendResponse) {
         eUser: req.data
     })
     chrome.runtime.sendMessage({code: 3000}, res => {
-        // if (res.code == 0) {
-            
-        // }
         sendResponse(res)
     })
 }
