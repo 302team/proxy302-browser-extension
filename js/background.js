@@ -49,7 +49,15 @@ function setHttpProxy(host, port, bypasslist) {
 
     chrome.proxy.settings.set(
         {value: config, scope: 'regular'},
-        function() {});
+        function() {
+            chrome.runtime.sendMessage({code: 30000});
+            chrome.browserAction.setIcon({ path: {
+                    "16": "images/logo.png",
+                    "32": "images/logo.png",
+                    "48": "images/logo.png",
+                    "128": "images/logo.png"
+            }})
+        });
 
 }
 
@@ -76,8 +84,14 @@ function clearAuth() {
 
 
 function exitProxy(){
+    
     chrome.proxy.settings.clear({}, res => {
         clearAuth();
+        let icon = {
+            path: "images/logo_g.png"
+        }
+        chrome.browserAction.setIcon(icon);
+        chrome.runtime.sendMessage({code: 30000});
     })
 }
 
