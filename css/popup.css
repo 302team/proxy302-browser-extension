@@ -319,3 +319,12 @@ input:read-only {
     height: 120px;
     font-size: 14px;
 }
+
+#remarkSpan {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 180px;
+    color: #777777;
+    font-size: 13px;
+}

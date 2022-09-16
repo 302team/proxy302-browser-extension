@@ -14,6 +14,7 @@ const eProxyState = document.getElementById('eProxyState');
 const eProxyCity = document.getElementById('eProxyCity');
 const eProxyType = document.getElementById('eProxyType');
 const eProxyEnType = document.getElementById('eProxyEnType');
+const eProxyRemaek = document.getElementById('eProxyRemark');
 const eProxyIsApi = document.getElementById('eProxyIsApiProxy');
 
 
@@ -36,6 +37,7 @@ function checkProxyChange(){
         country: eProxyCountry.value,
         state: eProxyState.value,
         city: eProxyCity.value,
+        remark: eProxyRemaek.value,
         is_api: parseInt(eProxyIsApi.value),
     }
 

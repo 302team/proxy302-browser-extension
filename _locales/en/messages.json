@@ -20,6 +20,7 @@
     "port": {"message": "Port"},
     "username": {"message": "Username"},
     "password": {"message": "Password"},
+    "remark": {"message": "Remark"},
     "pasteFormat": {"message": "Paste format \"host:port:username:password\""},
     "help": {"message": "Help"},
     "dashborad": {"message": "Dashborad"},

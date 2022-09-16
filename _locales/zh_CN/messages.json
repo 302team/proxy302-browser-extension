@@ -20,6 +20,7 @@
     "port": {"message": "端口"},
     "username": {"message": "用户名"},
     "password": {"message": "密码"},
+    "remark": {"message": "备注"},
     "pasteFormat": {"message": "使用\"主机:端口:用户名:密码\"格式粘贴"},
     "help": {"message": "使用教程"},
     "dashborad": {"message": "代理后台"},

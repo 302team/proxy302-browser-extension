@@ -14,6 +14,7 @@ $(changeIPBtn).tooltip({
 })
 const connectStatusSpan = document.getElementById('connectStatusSpan');
 const nowIPSpan = document.getElementById('nowIPSpan');
+const remarkSpan = document.getElementById('remarkSpan');
 
 const $proxy302ProxyNav = $("#proxy302ProxyNav");
 const $customProxyNav = $("#customProxyNav");
@@ -265,6 +266,16 @@ function initProxy(){
       nowIPSpan.innerHTML = "IP: " + res.eProxy.ip;
     } else {
       nowIPSpan.innerHTML = "";
+    }
+    if (res.eProxy.remark) {
+      remarkSpan.hidden = false;
+      remarkSpan.innerHTML = "<label>" + chrome.i18n.getMessage('remark') + ":</label> <span>" + res.eProxy.remark + "</span>";
+      $('#remarkSpan span').tooltip({
+        title: res.eProxy.remark,
+      })
+    } else {
+      remarkSpan.hidden = true;
+      remarkSpan.innerHTML = "";
     }
     if (res.client_host && res.client_host != ""){
       useClientCheck.checked = true;
